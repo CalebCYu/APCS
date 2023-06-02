@@ -11,10 +11,8 @@ function fetchImage(query) {
     fetch(searchUrl)
       .then(response => response.json())
       .then(data => {
-        // Extract the image URL from the API response
         const imageUrl = data.images_results[Math.floor(Math.random() * data.images_results.length)].original;
   
-        // Display the image on the webpage
         const imageElement = document.getElementById('randomImage');
         imageElement.src = imageUrl;
         imageElement.alt = 'Random Image';
@@ -26,12 +24,7 @@ function fetchImage(query) {
   
 
   
-  // Call the fetchImageFromSerpApi() function to retrieve and display the image
- 
-
-
 function handleButtonClick(buttonId) {
-    // Get the button element
     if(buttonId==monkey[x]){
         counter++;
         
@@ -45,7 +38,6 @@ function handleButtonClick(buttonId) {
     fetchImage(monkey[x]);
   }
 
-  // Event listeners for button clicks
   const button1 = document.getElementById('1');
   button1.addEventListener('click', () => handleButtonClick('Baboon'));
 
